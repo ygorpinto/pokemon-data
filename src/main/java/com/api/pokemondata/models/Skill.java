@@ -23,16 +23,16 @@ public class Skill implements Serializable {
   private String name;
 
   @Column(nullable = false, length = 50)
-  private Long power;
+  private String power;
 
   @Column(nullable = false, length = 50)
-  private Long cooldown;
+  private String cooldown;
 
   public String getName() {
     return name;
   }
 
-  public Long getPower() {
+  public String getPower() {
     return power;
   }
 
@@ -40,7 +40,7 @@ public class Skill implements Serializable {
     return id;
   }
 
-  public Long getCooldown() {
+  public String getCooldown() {
     return cooldown;
   }
 
@@ -48,11 +48,11 @@ public class Skill implements Serializable {
     this.name = name;
   }
 
-  public void setPower(Long power) {
+  public void setPower(String power) {
     this.power = power;
   }
 
-  public void setCooldown(Long cooldown) {
+  public void setCooldown(String cooldown) {
     this.cooldown = cooldown;
   }
 }

@@ -1,6 +1,6 @@
 package com.api.pokemondata.controllers;
 
-import java.time.LocalDate;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -15,31 +15,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.pokemondata.DTO.UserDTO;
-import com.api.pokemondata.models.User;
-import com.api.pokemondata.services.UserService;
+import com.api.pokemondata.DTO.SkillDTO;
+import com.api.pokemondata.models.Skill;
+import com.api.pokemondata.services.SkillService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/user")
-public class UserController {
-  
+@RequestMapping("/skill")
+public class SkillController {
   @Autowired
-  private UserService userService;
-
-  @GetMapping
-  public ResponseEntity<Object> listAll () {
-    return ResponseEntity.status(HttpStatus.ACCEPTED).body(userService.findAll());
-  }
+  private SkillService skillService;
 
   @PostMapping
-  public ResponseEntity<Object> create (@RequestBody @Valid UserDTO userDTO) {
-    User user = new User();
+  public ResponseEntity<Object> create (@RequestBody @Valid SkillDTO skillDTO) {
 
-    BeanUtils.copyProperties(userDTO, user);
+    Skill skill = new Skill();
 
-    user.setDateCreated(LocalDate.now());
+    BeanUtils.copyProperties(skillDTO, skill);
 
-    return ResponseEntity.status(HttpStatus.CREATED).body(userService.save(user));
+    return ResponseEntity.status(HttpStatus.CREATED).body(skillService.save(skill));
+  }
+
+  @GetMapping
+  public ResponseEntity<Object> listAll() {
+    return ResponseEntity.status(HttpStatus.ACCEPTED).body(skillService.findAll());
   }
 }

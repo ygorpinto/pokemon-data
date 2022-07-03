@@ -34,7 +34,7 @@ public class Pokemon implements Serializable {
   @Column(nullable = false, unique = true, length = 20)
   private String name;
 
-  @Column(nullable = false, length = 50)
+  @Column(nullable = false, length = 255)
   private String logo;
 
   @Column(nullable = false, length = 50)

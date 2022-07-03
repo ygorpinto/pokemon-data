@@ -8,20 +8,20 @@ public class SkillDTO {
   private String name;
 
   @NotBlank
-  private Long power;
+  private String power;
 
   @NotBlank
-  private Long cooldown;
+  private String cooldown;
 
   public String getName() {
     return name;
   }
 
-  public Long getPower() {
+  public String getPower() {
     return power;
   }
 
-  public Long getCooldown() {
+  public String getCooldown() {
     return cooldown;
   }
 
@@ -29,11 +29,11 @@ public class SkillDTO {
     this.name = name;
   }
 
-  public void setPower(Long power) {
+  public void setPower(String power) {
     this.power = power;
   }
 
-  public void setCooldown(Long cooldown) {
+  public void setCooldown(String cooldown) {
     this.cooldown = cooldown;
   }
   

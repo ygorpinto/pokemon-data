@@ -1,8 +1,7 @@
 package com.api.pokemondata.DTO;
 
-import java.time.LocalDate;
-
 import javax.validation.constraints.NotBlank;
+
 
 public class UserDTO {
 
@@ -18,9 +17,6 @@ public class UserDTO {
 
   @NotBlank
   private String email;
- 
-  @NotBlank
-  private LocalDate dateCreated;
 
   public String getEmail() {
     return email;
@@ -38,9 +34,6 @@ public class UserDTO {
     return password;
   }
 
-  public LocalDate getDateCreated() {
-    return dateCreated;
-  }
 
   public void setEmail(String email) {
     this.email = email;
@@ -58,7 +51,4 @@ public class UserDTO {
     this.username = username;
   }
 
-  public void setDateCreated(LocalDate dateCreated) {
-    this.dateCreated = dateCreated;
-  }
 }

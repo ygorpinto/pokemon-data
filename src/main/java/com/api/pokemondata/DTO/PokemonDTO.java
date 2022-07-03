@@ -1,6 +1,7 @@
 package com.api.pokemondata.DTO;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import javax.validation.constraints.NotBlank;
 
@@ -18,19 +19,17 @@ public class PokemonDTO {
   private String type;
 
   @NotBlank
-  private Skill skill;
+  private String userId;
 
   @NotBlank
-  private LocalDate dateCreated;
+  private String skillId;
+
 
 
   public String getLogo() {
     return logo;
   }
 
-  public Skill getSkill() {
-    return skill;
-  }
 
   public String getName() {
     return name;
@@ -44,16 +43,28 @@ public class PokemonDTO {
     this.logo = logo;
   }
 
-  public void setSkill(Skill skill) {
-    this.skill = skill;
-  }
-
   public void setType(String type) {
     this.type = type;
   }
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public void setSkillId(String skillId) {
+    this.skillId = skillId;
+  }
+
+  public void setUserId(String userId) {
+    this.userId = userId;
+  }
+
+  public String getSkillId() {
+    return skillId;
+  }
+
+  public String getUserId() {
+    return userId;
   }
   
 }
