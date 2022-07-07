@@ -1,6 +1,7 @@
 package com.api.pokemondata.controllers;
 
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -26,17 +27,21 @@ import com.api.pokemondata.services.UserService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/pokemon")
+@RequestMapping("/api/v1/pokemon")
 public class PokemonController {
 
-  @Autowired
-  private PokemonService pokemonService;
+  final PokemonService pokemonService;
+  final SkillService skillService;
+  final UserService userService;
 
-  @Autowired
-  private SkillService skillService;
-
-  @Autowired
-  private UserService userService;
+  PokemonController(
+    PokemonService pokemonService,
+    SkillService skillService,
+    UserService userService) {
+      this.pokemonService = pokemonService;
+      this.skillService = skillService;
+      this.userService = userService;
+  }
 
   @GetMapping
   public ResponseEntity<Object> listAll () {
@@ -50,9 +55,9 @@ public class PokemonController {
 
     BeanUtils.copyProperties(pokemonDTO, pokemon);
 
-    Skill skill = skillService.findOne(UUID.fromString(pokemonDTO.getSkillId()));
+    Skill skill = skillService.findByName(pokemonDTO.getSkill());
 
-    User user = userService.findById(UUID.fromString(pokemonDTO.getUserId()));
+    User user = userService.findByEmail(pokemonDTO.getUser());
     
     pokemon.setSkill(skill);
 

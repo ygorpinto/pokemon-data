@@ -1,7 +1,5 @@
 package com.api.pokemondata.controllers;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
@@ -21,7 +19,7 @@ import com.api.pokemondata.services.SkillService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/skill")
+@RequestMapping("/api/v1/skill")
 public class SkillController {
   @Autowired
   private SkillService skillService;

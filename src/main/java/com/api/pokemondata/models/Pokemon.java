@@ -2,6 +2,7 @@ package com.api.pokemondata.models;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -51,17 +52,11 @@ public class Pokemon implements Serializable {
     return name;
   }
 
-  public Skill getSkill() {
-    return skill;
-  }
 
   public String getType() {
     return type;
   }
 
-  public User getUser() {
-    return user;
-  }
 
   public LocalDate getDateCreated() {
     return dateCreated;
@@ -71,17 +66,11 @@ public class Pokemon implements Serializable {
     this.logo = logo;
   }
 
-  public void setSkill(Skill skill) {
-    this.skill = skill;
-  }
 
   public void setType(String type) {
     this.type = type;
   }
 
-  public void setUser(User user) {
-    this.user = user;
-  }
 
   public void setName(String name) {
     this.name = name;
@@ -89,6 +78,30 @@ public class Pokemon implements Serializable {
 
   public void setDateCreated(LocalDate date_created) {
     this.dateCreated = date_created;
+  }
+
+  public UUID getId() {
+    return id;
+  }
+
+  public Skill getSkill() {
+    return skill;
+  }
+
+  public User getUser() {
+    return user;
+  }
+
+  public void setId(UUID id) {
+    this.id = id;
+  }
+
+  public void setSkill(Skill skill) {
+    this.skill = skill;
+  }
+
+  public void setUser(User user) {
+    this.user = user;
   }
 
 }

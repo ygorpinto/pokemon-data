@@ -1,6 +1,7 @@
 package com.api.pokemondata.services;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.transaction.Transactional;
@@ -30,6 +31,10 @@ public class UserService {
   @Transactional
   public User save (User user) {
     return userRepository.save(user);
+  }
+
+  public User findByEmail (String email) {
+    return userRepository.findByEmail(email);
   }
   
 }

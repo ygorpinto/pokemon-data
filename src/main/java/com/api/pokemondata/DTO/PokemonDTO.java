@@ -1,11 +1,7 @@
 package com.api.pokemondata.DTO;
 
-import java.time.LocalDate;
-import java.util.UUID;
-
 import javax.validation.constraints.NotBlank;
 
-import com.api.pokemondata.models.Skill;
 
 public class PokemonDTO {
 
@@ -19,10 +15,10 @@ public class PokemonDTO {
   private String type;
 
   @NotBlank
-  private String userId;
+  private String user;
 
   @NotBlank
-  private String skillId;
+  private String skill;
 
 
 
@@ -51,20 +47,20 @@ public class PokemonDTO {
     this.name = name;
   }
 
-  public void setSkillId(String skillId) {
-    this.skillId = skillId;
+  public void setSkill(String skill) {
+    this.skill = skill;
   }
 
-  public void setUserId(String userId) {
-    this.userId = userId;
+  public void setUser(String user) {
+    this.user = user;
   }
 
-  public String getSkillId() {
-    return skillId;
+  public String getSkill() {
+    return skill;
   }
 
-  public String getUserId() {
-    return userId;
+  public String getUser() {
+    return user;
   }
   
 }

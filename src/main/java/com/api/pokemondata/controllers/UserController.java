@@ -21,7 +21,7 @@ import com.api.pokemondata.services.UserService;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
-@RequestMapping("/user")
+@RequestMapping("/api/v1/user")
 public class UserController {
   
   @Autowired
