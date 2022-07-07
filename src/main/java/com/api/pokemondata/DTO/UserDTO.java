@@ -5,7 +5,6 @@ import javax.validation.constraints.NotBlank;
 
 public class UserDTO {
 
-
   @NotBlank
   private String logo;
 

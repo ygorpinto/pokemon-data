@@ -1,7 +1,6 @@
 package com.api.pokemondata.services;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 
 import javax.transaction.Transactional;

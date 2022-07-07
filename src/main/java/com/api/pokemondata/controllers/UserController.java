@@ -25,7 +25,12 @@ import com.api.pokemondata.services.UserService;
 public class UserController {
   
   @Autowired
-  private UserService userService;
+  final UserService userService;
+
+  UserController (UserService userService) {
+    this.userService = userService;
+  }
+
 
   @GetMapping
   public ResponseEntity<Object> listAll () {

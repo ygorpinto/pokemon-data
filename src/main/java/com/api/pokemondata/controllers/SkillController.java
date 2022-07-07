@@ -3,7 +3,6 @@ package com.api.pokemondata.controllers;
 import javax.validation.Valid;
 
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,8 +20,12 @@ import com.api.pokemondata.services.SkillService;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api/v1/skill")
 public class SkillController {
-  @Autowired
-  private SkillService skillService;
+
+  final SkillService skillService;
+
+  SkillController(SkillService skillService) {
+    this.skillService = skillService;
+  }
 
   @PostMapping
   public ResponseEntity<Object> create (@RequestBody @Valid SkillDTO skillDTO) {

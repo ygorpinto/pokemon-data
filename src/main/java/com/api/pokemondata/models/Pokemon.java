@@ -2,7 +2,6 @@ package com.api.pokemondata.models;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Optional;
 import java.util.UUID;
 
 import javax.persistence.Column;
